@@ -6,20 +6,22 @@ This is an academic project focused on implementing online stock trading using b
 ### **Step 1:Installation step:-**
 
 _1) Installing pre-requisites: -_
+
 If you're running on Ubuntu, you can download the prerequisites using the following commands:
-```console
+```bash
 $ curl -O https://hyperledger.github.io/composer/v0.19/prereqs-ubuntu.sh
 $ chmod u+x prereqs-ubuntu.sh
 ```
 Next run the script - as this briefly uses sudo during its execution, you will be prompted for your password.
-```
+```bash
 $ ./prereqs-ubuntu.sh
 ```
 _2) Install the CLI tools_
+
 There are a few useful CLI tools for Composer developers. The most important one is composer-cli, which contains all the essential operations, so we'll install that first. Next, we'll also pick up generator-Hyperledger-composer, composer-rest-server and Yeoman plus the generator-Hyperledger-composer. Those last 3 are not core parts of the development environment, but they'll be useful if you're following the tutorials or developing applications that interact with your Business Network, so we'll get them installed now.
 Note that you should not use su or sudo for the following npm commands.
 Essential CLI tools:
-```
+```sh
 $ npm install -g composer-cli@0.19
 ```
 Utility 	for running a REST Server on your machine to expose your business 	networks as RESTful APIs:
@@ -36,6 +38,7 @@ composer:
 $ npm install -g yo
 ```
 _3) Install Hyperledger Fabric_
+
 This step gives you a local Hyperledger Fabric runtime to deploy your business networks to.
 In a directory of your choice (we will assume ~/fabric-dev-servers), 	get the .tar.gz file that contains the tools to install Hyperledger 	Fabric:
 ```
@@ -74,7 +77,9 @@ $ git clone https://github.com/pasadyash/SmartStockExchange.git
 
 In new terminal run below commands 
 Navigate in the SmartStockExchange/stbc-network folder
-*1) Setting up admin REST server*
+
+_1) Setting up admin REST server_
+
 ```
 $ npm install 
 $ composer network install --card PeerAdmin@hlfv1 --archiveFile stbc- network@0.0.1.bna
@@ -101,7 +106,8 @@ Simply run shell script command
 $ ./networkStart.sh stbc-network amin 0.0.4
 ```
 
-*2) Generating a REST server:*
+_2) Generating a multi-user REST server:_
+
 In new terminal run below commands 
 Navigate in the SmartStockExchange/stbc-network folder
 
@@ -109,7 +115,8 @@ Navigate in the SmartStockExchange/stbc-network folder
 $ ./rsmulti.sh  -d local -a google
 ```
 
-*3) Run client application:*
+_3) Run client application:_
+
 In new terminal run below commands 
 Navigate in the SmartStockExchange/stbc-app/server folder
 
